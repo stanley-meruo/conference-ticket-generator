@@ -100,9 +100,9 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       </div>
 
       <div id="ticket-section" className="mt-14 relative">
-        <img src={Subtract} alt="" className="w-full h-auto xs:h-[600px] " />
+        <img src={Subtract} alt="" className="w-[300px] h-auto m-auto xs:h-[600px] " />
 
-        <div className="absolute inset-0 rounded-2xl m-4 border-button border-2 h-[430px] xs:mx-auto xs:h-[450px] xs:w-[270px] ">
+        <div className="absolute inset-0 rounded-2xl my-4 border-button border-2 w-[260px] h-[435px] mx-auto xxs:h-[455px] xxs:">
           <div className="text-center">
             <p className="text-[32px] font-medium font-roadrage">
               Techember Fest "25
@@ -116,12 +116,12 @@ const TicketConfirmation = ({ attendee, ticket }) => {
             <img
               src={attendee.photoUrl}
               alt="Profile"
-              className="w-[130px] h-[130px] rounded-2xl border-4 border-button mx-auto my-3"
+              className="w-[130px] h-[130px] rounded-2xl border-4 border-button mx-auto my-4"
             />
           </div>
 
           {/* Ticket Selection & Attendee Details */}
-          <div className="mx-2 border border-secondary rounded-xl text-xs xs:pb-4">
+          <div className="mx-2 border border-secondary rounded-xl text-xs xs:pb-4 xxs:pb-4">
             <div className="grid grid-cols-2 p-1">
               <div className="grid p-1 text-gray-400 border-secondary border border-t-0 border-l-0">
                 Enter your name

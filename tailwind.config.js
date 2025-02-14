@@ -17,6 +17,7 @@ export default {
         button: "#24A0B5",
       },
       screens: {
+        xxs: "370px",
         xs: "480px",
         xxl: "1500px",
       },
