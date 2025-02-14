@@ -22,7 +22,11 @@ const TicketConfirmation = ({ attendee, ticket }) => {
     if (!ticketElement) return console.error("Ticket section not found!");
 
     try {
-      const canvas = await html2canvas(ticketElement);
+      const canvas = await html2canvas(ticketElement, {
+        useCORS: true, // Enable cross-origin images
+        logging: true, // Enable logging to debug issues
+        scale: 2, // Improve image quality
+      });
       const imageUrl = canvas.toDataURL("image/png");
 
       // Upload to Cloudinary
@@ -117,7 +121,7 @@ const TicketConfirmation = ({ attendee, ticket }) => {
           </div>
 
           {/* Ticket Selection & Attendee Details */}
-          <div className="mx-2 border border-secondary rounded-xl text-xs">
+          <div className="mx-2 border border-secondary rounded-xl text-xs xs:pb-4">
             <div className="grid grid-cols-2 p-1">
               <div className="grid p-1 text-gray-400 border-secondary border border-t-0 border-l-0">
                 Enter your name
@@ -127,7 +131,7 @@ const TicketConfirmation = ({ attendee, ticket }) => {
               </div>
               <div className="grid p-1 text-gray-400 border border-secondary border-t-0 border-r-0">
                 Enter your email*
-                <span className="text-white font-semibold py-1 truncate">
+                <span className="text-white font-semibold py-1 overflow-hidden">
                   {attendee.email}
                 </span>
               </div>
