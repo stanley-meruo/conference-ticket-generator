@@ -4,7 +4,7 @@ import BarCode0 from "/barcode0.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import Success from "../assets/success.gif"

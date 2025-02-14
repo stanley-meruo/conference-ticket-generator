@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^4.0.0",
     "browser-image-compression": "^2.0.2",
     "emailjs-com": "^3.2.0",
