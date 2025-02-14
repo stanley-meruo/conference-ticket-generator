@@ -7,7 +7,13 @@ export default defineConfig({
   base: "/",
   build: {
     rollupOptions: {
-      external: ["axios"],
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor"; // Move dependencies to a separate chunk
+          }
+        },
+      },
     },
   },
 });
