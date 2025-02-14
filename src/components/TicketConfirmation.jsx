@@ -47,8 +47,9 @@ const TicketConfirmation = ({ attendee, ticket }) => {
         "template_qescowf",
         {
           to_email: attendee.email,
+          attendee_name: attendee.name,
           subject: "Your Techember Fest '25 Ticket",
-          message: `Here is your ticket. Click the link below to download it:\n${uploadedImageUrl}`,
+          message: `Here is your ticket To Techember Fest 25. Click the link below to download it:\n${uploadedImageUrl}`,
           image_url: uploadedImageUrl,
         },
         "N2NxCDgsxgi5ydo4w"
@@ -100,7 +101,11 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       </div>
 
       <div id="ticket-section" className="mt-14 relative">
-        <img src={Subtract} alt="" className="w-[300px] h-auto m-auto xs:h-[600px] " />
+        <img
+          src={Subtract}
+          alt=""
+          className="w-[300px] h-auto m-auto xs:h-[600px] "
+        />
 
         <div className="absolute inset-0 rounded-2xl my-4 border-button border-2 w-[260px] h-[435px] mx-auto xxs:h-[455px] xxs:">
           <div className="text-center">
@@ -123,25 +128,25 @@ const TicketConfirmation = ({ attendee, ticket }) => {
           {/* Ticket Selection & Attendee Details */}
           <div className="mx-2 border border-secondary rounded-xl text-xs xs:pb-4 xxs:pb-4">
             <div className="grid grid-cols-2 p-1">
-              <div className="grid p-1 text-gray-400 border-secondary border border-t-0 border-l-0">
+              <div className="grid p-1 text-gray-400 border-secondary border border-t-0 border-l-0 border-b-[0.5px] border-r-[0.5px]">
                 Enter your name
                 <span className="text-white font-semibold py-1">
                   {attendee.name}
                 </span>
               </div>
-              <div className="grid p-1 text-gray-400 border border-secondary border-t-0 border-r-0">
+              <div className="grid p-1 text-gray-400 border border-secondary border-t-0 border-r-0 border-b-[0.5px] border-l-[0.5px]">
                 Enter your email*
                 <span className="text-white font-semibold py-1 overflow-hidden">
                   {attendee.email}
                 </span>
               </div>
-              <div className="grid p-1 text-gray-400 border border-secondary border-b border-l-0">
+              <div className="grid p-1 text-gray-400 border border-secondary border-b border-l-0 border-t-[0.5px] border-r-[0.5px]">
                 Ticket Type :
                 <span className="text-white font-semibold py-1 uppercase">
                   {ticket.ticket}
                 </span>
               </div>
-              <div className="grid p-1 text-gray-400 border border-secondary border-b border-r-0">
+              <div className="grid p-1 text-gray-400 border border-secondary border-b border-r-0 border-t-[0.5px] border-l-[0.5px]">
                 Ticket for :
                 <span className="text-white font-semibold py-1">
                   {ticket.quantity}
