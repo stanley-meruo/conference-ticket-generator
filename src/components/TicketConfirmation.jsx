@@ -57,14 +57,14 @@ const TicketConfirmation = ({ attendee, ticket }) => {
           to_email: attendee.email,
           attendee_name: attendee.name,
           subject: "Your Techember Fest '25 Ticket",
-          message: `Here is your ticket To Techember Fest 25. Click the link below to download it:\n${uploadedImageUrl}`,
-          image_url: uploadedImageUrl,
+          message: `Here is your ticket To Techember Fest 25. Click the link below to view:\n${uploadedImageUrl}`,
+          // image_url: uploadedImageUrl,
         },
         "N2NxCDgsxgi5ydo4w"
       );
 
       setLoading(false); // Hide loader
-      setSuccess(true); // Show success confirmation ✅
+      setSuccess(true); // Show success confirmation
 
       // Hide success message after 3 seconds
       setTimeout(() => setSuccess(false), 3000);
