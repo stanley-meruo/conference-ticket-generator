@@ -29,6 +29,14 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       });
       const imageUrl = canvas.toDataURL("image/png");
 
+      // Create a temporary link for downloading
+      const link = document.createElement("a");
+      link.href = imageUrl;
+      link.download = `TechemberFest_Ticket.png`; // Ticket filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       // Upload to Cloudinary
       const formData = new FormData();
       formData.append("file", imageUrl);
@@ -103,7 +111,7 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       <div id="ticket-section" className="mt-14 relative">
         <img
           src={Subtract}
-          alt=""
+          alt="Vector Ticket Frame"
           className="w-[300px] h-auto m-auto xs:h-[600px] "
         />
 

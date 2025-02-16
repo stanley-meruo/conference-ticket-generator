@@ -8,7 +8,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="font-jeju w-full px-4 py-3 rounded-2xl bg-primary bg-opacity-80 border border-color sticky top-4 left-0 z-50">
+    <nav className="font-jeju w-full px-4 py-3 rounded-2xl bg-primary bg-opacity-90 border border-color sticky top-4 left-0 z-50">
       <div className="mx-auto flex justify-between items-center">
         <Link to="/">
           <div className="flex items-center gap-2">
