@@ -30,7 +30,7 @@ const TicketSelection = ({ onNext }) => {
     <div className="text-white font-roboto">
       {/* Header */}
       <div className="bg-gradient-to-br from-secondary to-primary text-center border-secondary border-2 rounded-2xl py-5">
-        <h1 className="font-roadrage text-5xl font-medium pb-2 lg:text-3xl lg:pt-2">
+        <h1 className="font-roadrage text-5xl font-medium pb-2 lg:pt-2">
           Techember Fest "25
         </h1>
         <p className="px-9 pb-8 text-sm mx-auto leading-6 md:px-12 sm:text-base lg:w-96">

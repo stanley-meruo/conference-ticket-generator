@@ -40,19 +40,28 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       // Upload to Cloudinary
       const formData = new FormData();
       formData.append("file", imageUrl);
-      formData.append("upload_preset", "ticket_upload");
-
-      const cloudinaryResponse = await axios.post(
-        "https://api.cloudinary.com/v1_1/ticketcloud/image/upload",
-        formData
+      formData.append(
+        "upload_preset",
+        "import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET"
       );
 
+      const cloudinaryResponse = await axios.post(
+        "import.meta.env.VITE_CLOUDINARY_UPLOAD_URL",
+        formData
+      );
       const uploadedImageUrl = cloudinaryResponse.data.secure_url;
+
+      // Ensure attendee exists before sending email
+      if (!attendee || !attendee.email || !attendee.name) {
+        console.error("Attendee details are missing!");
+        setLoading(false);
+        return;
+      }
 
       // Send email with image URL
       await emailjs.send(
-        "service_tld3lgw",
-        "template_qescowf",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           to_email: attendee.email,
           attendee_name: attendee.name,
@@ -60,7 +69,7 @@ const TicketConfirmation = ({ attendee, ticket }) => {
           message: `Here is your ticket To Techember Fest 25. Click the link below to view:\n${uploadedImageUrl}`,
           // image_url: uploadedImageUrl,
         },
-        "N2NxCDgsxgi5ydo4w"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setLoading(false); // Hide loader
