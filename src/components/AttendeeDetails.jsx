@@ -42,7 +42,7 @@ const AttendeeDetails = ({ onNext, onBack }) => {
       formData.append("upload_preset", "ticket_upload");
 
       const response = await axios.post(
-        "https://api.cloudinary.com/v1_1/ticketcloud/image/upload",
+        "https://api.cloudinary.com/v1_1/gallerycloud/image/upload",
         formData
       );
 

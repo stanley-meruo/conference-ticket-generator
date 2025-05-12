@@ -42,11 +42,11 @@ const TicketConfirmation = ({ attendee, ticket }) => {
       formData.append("file", imageUrl);
       formData.append(
         "upload_preset",
-        "import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET"
+        import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
       );
 
       const cloudinaryResponse = await axios.post(
-        "import.meta.env.VITE_CLOUDINARY_UPLOAD_URL",
+        import.meta.env.VITE_CLOUDINARY_UPLOAD_URL,
         formData
       );
       const uploadedImageUrl = cloudinaryResponse.data.secure_url;
